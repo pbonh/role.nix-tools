@@ -1,2 +1,12 @@
 ---
-# tasks file for nix-tools
+- name: Nix | Setup Nix Config Directory | template
+  file:
+    path: "{{ nix_config_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Nix | Copies Nix Config | template
+  changed_when: false
+  template:
+    src: "config.nix.j2"
+    dest: "{{ nix_config_dir }}/config.nix"

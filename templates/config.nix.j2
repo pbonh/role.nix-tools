@@ -1,0 +1,53 @@
+{
+  packageOverrides = pkgs: with pkgs; {
+    devPack = pkgs.buildEnv {
+      name = "dev-pack";
+      paths = [
+        zsh
+        starship
+        fzf
+        fd
+        ripgrep
+        bat
+        exa
+        navi
+        skim
+        curl
+        delta
+        gitAndTools.gh
+        lazygit
+        gitflow
+        grv
+        diffr
+        bpytop
+        hyperfine
+        ranger
+        gotop
+        screenfetch
+        jq
+        nnn
+        ghq
+        broot
+        lf
+        glances
+        watchman
+        aspell
+        bc
+        coreutils
+        gdb
+        nixUnstable
+        emscripten
+        nox
+        neovim
+        neovim-remote
+        python39Packages.pynvim
+        nodejs
+        yarn
+        ctags
+        /* Language Servers Start */
+        /* Language Servers End */
+      ];
+      extraOutputsToInstall = [ "man" "doc" ];
+    };
+  };
+}
