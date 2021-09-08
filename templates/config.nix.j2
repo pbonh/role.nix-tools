@@ -3,6 +3,8 @@
     devPack = pkgs.buildEnv {
       name = "dev-pack";
       paths = [
+        (hiPrio nixUnstable)
+        (hiPrio coreutils)
         zsh
         zoxide
         zsh-powerlevel10k
@@ -36,9 +38,7 @@
         watchman
         aspell
         bc
-        (hiPrio coreutils)
         gdb
-        (hiPrio nixUnstable)
         emscripten
         nox
         neovim
@@ -51,7 +51,7 @@
         /* Language Servers End */
       ];
       extraOutputsToInstall = [ "man" "doc" ];
-      programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      /* programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
     };
   };
 }
