@@ -10,3 +10,14 @@
   template:
     src: "config.nix.j2"
     dest: "{{ nix_config_dir }}/config.nix"
+
+- name: Nix | Build Nix Environment | command
+  changed_when: false
+  command:
+    cmd: "{{ nix_bin }}/nix-env -i {{ nix_buildenv_name }}"
+
+- name: Nix | Install xxh | command
+  command:
+    cmd: "{{ nix_bin }}/pipx install xxh"
+  args:
+    creates: "{{ bin_directory }}/xxh"
