@@ -21,3 +21,4 @@
     cmd: "{{ nix_bin }}/pipx install xxh"
   args:
     creates: "{{ bin_directory }}/xxh"
+
