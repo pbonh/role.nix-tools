@@ -1,0 +1,12 @@
+- name: Nix | Install xxh | command
+  command:
+    cmd: "{{ nix_bin }}/pipx install xxh"
+  args:
+    creates: "{{ bin_directory }}/xxh"
+
+- name: Nix | Install xxh powerlevel10k plugin | command
+  command:
+    cmd: "{{ bin_directory }}/xxh +I xxh-plugin-zsh-powerlevel10k"
+  args:
+    creates: "{{ xxh_plugin_dir }}/xxh-plugin-zsh-powerlevel10k"
+

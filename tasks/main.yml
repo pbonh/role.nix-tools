@@ -16,9 +16,5 @@
   command:
     cmd: "{{ nix_bin }}/nix-env -i {{ nix_buildenv_name }}"
 
-- name: Nix | Install xxh | command
-  command:
-    cmd: "{{ nix_bin }}/pipx install xxh"
-  args:
-    creates: "{{ bin_directory }}/xxh"
-
+- name: Nix | Install xxh | task
+  import_tasks: install_xxh.yml
