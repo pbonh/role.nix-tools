@@ -1,6 +1,6 @@
 - name: Nix | Install xxh | command
   command:
-    cmd: "{{ nix_bin }}/pipx install xxh"
+    cmd: "{{ nix_bin }}/pipx install xxh-xxh"
   args:
     creates: "{{ bin_directory }}/xxh"
 
