@@ -44,11 +44,7 @@
         emscripten
         nox
         cookiecutter
-        /* neovim */
-        neovim.override {
-          withPython3 = true;
-          extraPython3Packages = p: with p; [ pynvim ];
-        }
+        neovim
         neovim-remote
         python39Packages.pynvim
         nodejs
