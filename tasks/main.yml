@@ -16,5 +16,5 @@
   command:
     cmd: "{{ nix_bin }}/nix-env -i {{ nix_buildenv_name }}"
 
-- name: Nix | Install xxh | task
+- name: XXH | Install xxh | task
   import_tasks: install_xxh.yml
