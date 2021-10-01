@@ -6,5 +6,5 @@ nix_buildenv_name: dev-pack
 nix_config_dir: "{{ dotfiles_user_home }}/.config/nixpkgs"
 bin_directory: "{{ dotfiles_user_home }}/.local/bin"
 lang_tools_nix: []
-lang_tools_nix_file: {{ lang_tools_nix | join('\n') }}
+lang_tools_nix_file: "{{ lang_tools_nix | join('\n') }}"
 xxh_plugin_dir: "{{ dotfiles_user_home }}/.xxh/.xxh/plugins"
