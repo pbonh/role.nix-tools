@@ -62,7 +62,7 @@
         nodePackages.prettier
         shfmt
         /* Language Tools Start */
-        {{ lang_tools_nix | join('\n') }}
+        {{ {{ lang_tools_nix | join('\n') }} or "/* No Language Tools Installed */" }}
         /* Language Tools End */
       ];
       extraOutputsToInstall = [ "man" "doc" ];
