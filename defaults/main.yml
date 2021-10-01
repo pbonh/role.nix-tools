@@ -1,6 +1,6 @@
 ---
 dotfiles_user_home: "{{ ansible_env.HOME }}"
-nix_path: "{{ lookup('env', 'HOME') }}/.nix-profile"
+nix_path: "{{ ansible_env.HOME }}/.nix-profile"
 nix_bin: "{{ nix_path }}/bin"
 nix_buildenv_name: dev-pack
 nix_config_dir: "{{ dotfiles_user_home }}/.config/nixpkgs"
