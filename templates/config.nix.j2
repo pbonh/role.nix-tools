@@ -43,6 +43,7 @@
         ghq
         broot
         lf
+        sc-im
         glances
         watchman
         aspell
@@ -60,8 +61,9 @@
         ctags
         nodePackages.prettier
         shfmt
-        /* Language Servers Start */
-        /* Language Servers End */
+        /* Language Tools Start */
+        {{ lang_tools_nix or "/* No Language Tools Installed */" }}
+        /* Language Tools End */
       ];
       extraOutputsToInstall = [ "man" "doc" ];
     };
