@@ -6,7 +6,6 @@
     mode: '0755'
 
 - name: Nix | Copies Nix Config | template
-  changed_when: false
   template:
     src: "config.nix.j2"
     dest: "{{ nix_config_dir }}/config.nix"
