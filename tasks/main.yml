@@ -15,5 +15,8 @@
   command:
     cmd: "{{ nix_bin }}/nix-env -i {{ nix_buildenv_name }}"
 
+- name: Ansible-Lint | Install Ansible-Lint | task
+  import_tasks: install_ansible_lint.yml
+
 - name: XXH | Install xxh | task
   import_tasks: install_xxh.yml
