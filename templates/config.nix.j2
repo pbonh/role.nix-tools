@@ -1,4 +1,5 @@
 {
+  pkgs = import <nixos-21.11>;
   packageOverrides = pkgs: with pkgs; {
     devPack = pkgs.buildEnv {
       name = "dev-pack";
