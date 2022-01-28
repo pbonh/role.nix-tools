@@ -1,0 +1,93 @@
+{ config, pkgs, ... }:
+
+{
+  # Home Manager needs a bit of information about you and the
+  # paths it should manage.
+  home.username = "{{ ansible_env.USER }}";
+  home.homeDirectory = "{{ ansible_env.HOME }}";
+
+  # Packages that should be installed to the user profile.
+  home.packages = [
+    pkgs.zsh
+    pkgs.zoxide
+    pkgs.zsh-powerlevel10k
+    pkgs.starship
+    pkgs.direnv
+    pkgs.rargs
+    pkgs.fzf
+    pkgs.fd
+    pkgs.ripgrep
+    pkgs.bat
+    pkgs.exa
+    pkgs.lsd
+    pkgs.kmon
+    pkgs.navi
+    pkgs.skim
+    pkgs.hyperfine
+    pkgs.procs
+    pkgs.sd
+    pkgs.diskonaut
+    pkgs.du-dust
+    pkgs.tokei
+    pkgs.bottom
+    pkgs.grex
+    pkgs.curl
+    pkgs.delta
+    pkgs.git
+    pkgs.gitAndTools.gh
+    pkgs.lazygit
+    pkgs.gitflow
+    pkgs.grv
+    pkgs.gitui
+    pkgs.diffr
+    pkgs.python39Packages.pipx
+    pkgs.bpytop
+    pkgs.ranger
+    pkgs.xplr
+    pkgs.joshuto
+    pkgs.gotop
+    pkgs.screenfetch
+    pkgs.macchina
+    pkgs.jq
+    pkgs.yq
+    pkgs.fx
+    pkgs.nnn
+    pkgs.ghq
+    pkgs.broot
+    pkgs.lf
+    pkgs.sc-im
+    pkgs.glances
+    pkgs.watchman
+    pkgs.aspell
+    pkgs.bc
+    pkgs.gdb
+    pkgs.emscripten
+    pkgs.nox
+    pkgs.cookiecutter
+    pkgs.neovim
+    pkgs.neovim-remote
+    pkgs.python39Packages.pynvim
+    pkgs.nodePackages.neovim
+    pkgs.nodejs
+    pkgs.yarn
+    pkgs.ctags
+    pkgs.nodePackages.prettier
+    pkgs.shfmt
+    /* Language Tools Start */
+    {{ lang_tools_nix_file or "/* No Language Tools Installed */" }}
+    /* Language Tools End */
+  ];
+
+  # This value determines the Home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new Home Manager release introduces backwards
+  # incompatible changes.
+  #
+  # You can update Home Manager without changing this value. See
+  # the Home Manager release notes for a list of state version
+  # changes in each release.
+  home.stateVersion = "22.05";
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+}
