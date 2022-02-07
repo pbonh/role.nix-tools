@@ -5,21 +5,5 @@
     state: directory
     mode: '0755'
 
-#- name: Nix | Copies Nix Config | template
-#  template:
-#    src: "config.nix.j2"
-#    dest: "{{ nix_config_dir }}/config.nix"
-
-#- name: Nix | Build Nix Environment | command
-#  changed_when: false
-#  command:
-#    cmd: "{{ nix_bin }}/nix-env -i {{ nix_buildenv_name }}"
-
 - name: Nix | Install Nix Home-Manager | template
-  import_tasks: install_home_manager.yml
-
-- name: Ansible-Lint | Install Ansible-Lint | task
-  import_tasks: install_ansible_lint.yml
-
-- name: XXH | Install xxh | task
-  import_tasks: install_xxh.yml
+  import_tasks: tasks/install_home_manager.yml
