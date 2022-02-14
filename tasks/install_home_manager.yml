@@ -6,9 +6,9 @@
   ignore_errors: true
 
 - name: Nix | Add Home-Manager Channel | command
+  when: home_manager_check.rc != 0
   command:
     cmd: "{{ nix_bin }}/nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager"
-  when: home_manager_check.rc != 0
 
 - name: Nix | Update Nix Channels | command
   changed_when: false
@@ -16,7 +16,7 @@
     cmd: "{{ nix_bin }}/nix-channel --update"
 
 - name: Nix | Install Home-Manager | command
-  changed_when: false
+  when: home_manager_check.rc != 0
   shell:
     cmd: "export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH} && {{ nix_bin }}/nix-shell '<home-manager>' -A install"
 
