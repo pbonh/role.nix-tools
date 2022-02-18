@@ -94,4 +94,23 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Neovim Config
+  neovim = {
+    enable = true;
+    withPython = true;
+    withPython3 = true;
+
+    extraPythonPackages = (ps: with ps; [
+      unidecode
+      pynvim
+    ]);
+
+    extraPython3Packages = (ps: with ps; [
+      pynvim
+      unidecode
+      black
+      isort
+    ]);
+  };
 }
