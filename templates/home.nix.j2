@@ -75,6 +75,7 @@
       ranger
       powerline
       pygments
+      neovim
       pynvim
     ]))
     nodejs
@@ -99,17 +100,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # Neovim Config
-  # programs.neovim = {
-  #   enable = true;
-  #   withPython3 = true;
-
-  #   extraPython3Packages = (ps: with ps; [
-  #     pynvim
-  #     unidecode
-  #     black
-  #     isort
-  #   ]);
-  # };
 }
