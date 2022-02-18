@@ -96,15 +96,15 @@
   programs.home-manager.enable = true;
 
   # Neovim Config
-  programs.neovim = {
-    enable = true;
-    withPython3 = true;
+  # programs.neovim = {
+  #   enable = true;
+  #   withPython3 = true;
 
-    extraPython3Packages = (ps: with ps; [
-      pynvim
-      unidecode
-      black
-      isort
-    ]);
-  };
+  #   extraPython3Packages = (ps: with ps; [
+  #     pynvim
+  #     unidecode
+  #     black
+  #     isort
+  #   ]);
+  # };
 }
