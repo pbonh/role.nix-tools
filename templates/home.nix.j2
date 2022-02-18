@@ -98,13 +98,7 @@
   # Neovim Config
   programs.neovim = {
     enable = true;
-    withPython = true;
     withPython3 = true;
-
-    extraPythonPackages = (ps: with ps; [
-      unidecode
-      pynvim
-    ]);
 
     extraPython3Packages = (ps: with ps; [
       pynvim
