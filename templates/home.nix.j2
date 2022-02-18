@@ -68,16 +68,16 @@
     nox
     cookiecutter
     tree-sitter
-    neovim
-    neovim-remote
-    python39Packages.pynvim
+    (neovim.withPackages (ps: with ps; [
+      pynvim
+      neovim-remote
+    ]))
     (python39.withPackages (ps: with ps; [
       pip
       powerline
       pygments
       pynvim
     ]))
-    nodePackages.neovim
     nodejs
     yarn
     ctags
