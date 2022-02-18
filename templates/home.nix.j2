@@ -68,12 +68,11 @@
     nox
     cookiecutter
     tree-sitter
-    (neovim.withPackages (ps: with ps; [
-      pynvim
-      neovim-remote
-    ]))
+    neovim
+    neovim-remote
     (python39.withPackages (ps: with ps; [
       pip
+      ranger
       powerline
       pygments
       pynvim
