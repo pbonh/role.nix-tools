@@ -45,6 +45,7 @@
     diffr
     python39Packages.pipx
     bpytop
+    ranger
     xplr
     joshuto
     gotop
@@ -67,13 +68,18 @@
     nox
     cookiecutter
     neovim
-    # (python39.withPackages (ps: with ps; [
-    #   pip
-    #   ranger
-    #   powerline
-    #   pygments
-    #   pynvim
-    # ]))
+    neovim-remote
+    tree-sitter
+    python39Packages.pynvim
+    (python39.withPackages (ps: with ps; [
+      pip
+      ranger
+      powerline
+      pygments
+      neovim
+      neovim-remote
+      pynvim
+    ]))
     nodejs
     yarn
     ctags
@@ -98,15 +104,23 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # Neovim Tools
-  programs.neovim = {
-    enable = true;
 
-    extraPackages = with pkgs; [
-      tree-sitter
-      neovim-remote
-      ranger
-      {{ lang_tools_nix_file or "/* No Language Tools Installed */" }}
-    ];
-  };
+  # Neovim Tools
+  # programs.neovim = {
+  #   enable = true;
+  #   withPython3 = true;
+
+  #   extraPackages = with pkgs; [
+  #     tree-sitter
+  #     neovim-remote
+  #     python39Packages.pynvim
+  #     ranger
+  #   ];
+
+  #   extraPython3Packages = (ps: with ps; [ 
+  #     pip
+  #     pygments
+  #     pynvim
+  #   ]);
+  # };
 }
