@@ -102,4 +102,16 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Neovim Tools
+  programs.neovim = {
+    enable = true;
+
+    extraPackages = with pkgs; [
+      tree-sitter
+      neovim-remote
+      ranger
+      {{ lang_tools_nix_file or "/* No Language Tools Installed */" }}
+    ];
+  };
 }
